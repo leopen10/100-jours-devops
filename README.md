@@ -33,16 +33,20 @@ Maîtriser l'ensemble de la stack DevOps de A à Z à travers 100 jours de prati
 | Jour | Titre | Statut | Projet |
 |------|-------|--------|--------|
 | 01 | Pourquoi le DevOps ? | ✅ | Notes + Concepts |
-| 02 | Linux pour le DevOps — Partie I | ✅ | Commandes + Script surveillance |
-| 03 | Déployer une App Statique avec Nginx | ✅ | **Site live http://44.222.105.23** |
+| 02 | Linux pour le DevOps — Partie I | ✅ | Commandes sur EC2 |
+| 03 | Déployer une App Statique avec Nginx | ✅ | Site live http://44.222.105.23 |
 | 04 | Les Éditeurs de Texte Linux (Vim, Nano) | ✅ | Exercices + .vimrc |
-| 05 | Introduction au Contrôle de Version (Git) | ✅ | Repo + branches + merge sur EC2 |
-| 06 | Git Avancé : Branches, Merge, Rebase | ✅ | Workflow pro + SSH GitHub |
-| 07 | Shell Scripting Bash | ✅ | Script monitoring complet sur EC2 |
-| 08 | GitHub Course (Fork, Clone, PR) | ⏳ | - |
-| 09 | AWS Introduction | ⏳ | - |
-| 10 | CI/CD avec AWS CodeBuild | ⏳ | - |
+| 05 | Introduction au Contrôle de Version (Partie I) | ✅ | Concepts + Théorie |
+| 06 | Les Bases de Git pour le Contrôle de Version | ✅ | Repo + branches + merge sur EC2 |
+| 07 | Stratégies de Branches Git et Questions d'Entretien | ⏳ | - |
+| 08 | Fork, Clone, branches, Merge, Rebase et Gestion des Conflits | ⏳ | - |
+| 09 | Déploiement d'un Premier Projet sur AWS avec Git, GitHub, IAM et EC2 | ⏳ | - |
+| 10 | Introduction Complète à AWS CodeBuild | ⏳ | - |
 ```
+
+Message de commit :
+```
+docs: sync progression tableau avec vraie playlist officielle
 
 Message de commit :
 ```

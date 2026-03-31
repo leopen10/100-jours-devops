@@ -203,6 +203,40 @@ MAIL_PASS : [mot de passe application Gmail]
 ---
 
 ## 🏋️ Projet Pratique
+---
+
+## ✅ Preuve d'exécution sur AWS EC2
+
+**Serveur :** Ubuntu 24.04 — AWS EC2 t3.micro — us-east-1  
+**Environnement :** Python 3.12 + venv-devops  
+**Date :** 31 mars 2026
+
+### Routes Flask testées
+```
+GET /hello  → {"message": "Hello from Flask!"}
+GET /health → {"status": "healthy", "service": "flaskapp", "version": "1.0.0"}
+GET /info   → {"app": "DevOps FlaskApp", "author": "Leonel-Magloire PENGOU MBA"}
+```
+
+### Résultats pytest
+```
+platform linux -- Python 3.12.3, pytest-9.0.2
+collected 3 items
+
+test_app.py::test_hello   PASSED  [ 33%]
+test_app.py::test_health  PASSED  [ 66%]
+test_app.py::test_info    PASSED  [100%]
+
+3 passed in 0.12s ✅
+```
+
+**Concepts démontrés :**
+- API REST Flask avec 3 routes
+- Tests unitaires avec pytest (100% passing)
+- Virtual environment Python (venv)
+- Pipeline CI/CD GitHub Actions (ci.yml)
+- Gestion des secrets GitHub
+- Tags sémantiques et releases automatiques
 
 Voir [`flaskapp/`](./flaskapp/) — Application Flask complète avec pipeline CI/CD.
 

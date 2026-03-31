@@ -152,6 +152,31 @@ CMD ["python", "app.py"]
 ---
 
 ## 🏋️ Projet Pratique — Dockeriser Flask
+---
+
+## ✅ Preuve d'exécution sur AWS EC2
+
+**Serveur :** Ubuntu 24.04 — AWS EC2 t3.micro — Docker 28.2.2  
+**Date :** 31 mars 2026
+```
+Image : leopen10/flaskapp-devops:v1 (133MB)
+Conteneur : aad97d458027
+
+GET /hello  → {"container":"aad97d458027","message":"Hello from Docker!","version":"2.0.0"}
+GET /health → {"service":"flaskapp-docker","status":"healthy"}
+
+Status    : running ✅
+Port      : 0.0.0.0:5001->5000/tcp
+IP Docker : 172.17.0.2
+```
+
+**Concepts démontrés :**
+- Installation Docker 28.2.2 sur Ubuntu
+- Dockerfile 11 étapes avec HEALTHCHECK
+- `docker build` avec cache layers
+- `docker run -d -p --name`
+- `docker logs` et `docker inspect`
+- .dockerignore optimisé
 
 Voir [`projet/`](./projet/) — Dockerisation complète de l'API Flask du Jour 8.
 

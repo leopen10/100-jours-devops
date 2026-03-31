@@ -140,6 +140,22 @@ jour-03-linux-partie2/
 Site déployé et accessible via navigateur sur `http://[IP-SERVEUR]` avec :
 - Page HTML professionnelle avec profil DevOps
 - Configuration Nginx optimisée
+- ---
+
+## 🌐 Démo Live
+
+- **URL :** http://44.222.105.23
+- **Serveur :** AWS EC2 t3.micro — Ubuntu 24.04 — us-east-1 (Virginie du Nord)
+- **Déployé le :** 31 mars 2026
+
+![Site déployé](screenshot.png)
+
+---
+
+## 🏆 Preuve de déploiement
+
+Site accessible publiquement via Nginx sur AWS EC2.
+Déploiement réalisé en suivant les étapes du script `deploy.sh`.
 - Permissions sécurisées
 - Logs configurés
 

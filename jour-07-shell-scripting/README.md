@@ -210,6 +210,55 @@ wget https://example.com/fichier.zip                 # Télécharger
 ---
 
 ## 🏋️ Projet Pratique
+---
+
+## ✅ Preuve d'exécution sur AWS EC2
+
+**Serveur :** Ubuntu 24.04 — AWS EC2 t3.micro — us-east-1  
+**Date :** 31 mars 2026
+```
+==========================================
+ JOUR 07 - Script DevOps Complet
+ Tue Mar 31 22:34:28 UTC 2026
+==========================================
+
+✅ nginx  : actif
+✅ ssh    : actif
+💾 Disque : 31% utilisé - OK
+🧠 Mémoire: 41% utilisée - OK
+🖥️  CPUs  : 2 cores
+⏱️  Uptime : up 2 hours, 7 minutes
+🌐 Site web: HTTP 200 - OK
+
+>>> Déploiement d'une mise à jour...
+✅ update.html déployé
+✅ Nginx rechargé
+📋 Erreurs Nginx: 0
+
+LOG HORODATÉ :
+[2026-03-31 22:34:28] SERVICE OK: nginx
+[2026-03-31 22:34:28] SERVICE OK: ssh
+[2026-03-31 22:34:28] DISK OK: 31%
+[2026-03-31 22:34:28] MEMORY OK: 41%
+[2026-03-31 22:34:28] WEB OK: HTTP 200
+[2026-03-31 22:34:28] Déploiement terminé ✓
+✅ Script Jour 07 terminé avec succès !
+```
+
+**Concepts démontrés :**
+- `set -exo pipefail` — mode debug + gestion d'erreurs
+- Fonctions Bash avec variables locales
+- Boucles `for` sur tableaux
+- Conditions `if/else` avec seuils
+- `trap` — nettoyage automatique à la fin
+- `curl`, `systemctl`, `df`, `free`, `nproc`
+- Logs horodatés avec `tee`
+- Déploiement automatisé Nginx
+```
+
+**Message de commit :**
+```
+docs: add execution proof on AWS EC2 - jour 07
 
 Voir [`projet-devops.sh`](./projet-devops.sh) — Script de monitoring et déploiement automatisé complet avec toutes les notions du cours.
 

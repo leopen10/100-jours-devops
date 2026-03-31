@@ -197,3 +197,20 @@ Voir [`exercices.sh`](./exercices.sh) — Simulation complète d'un workflow Git
 ## ➡️ Prochain Jour
 
 [Jour 07 — Shell Scripting Bash](../jour-07-shell-scripting/)
+
+---
+
+## ✅ Preuve d'exécution sur AWS EC2
+```
+* ca24ffc (HEAD -> main) chore: add changelog v1.0
+| * fec690f (release/v1.0) chore: add changelog v1.0
+|/
+* b3a85ed (feature/monitoring) feat: add monitoring script
+* 85aa692 feat: initial commit - projet devops jour 5
+
+Commits  : 3
+Branches : 3 (main, feature/monitoring, release/v1.0)
+Clé SSH  : ✅ Générée et ajoutée sur GitHub
+```
+
+- **Serveur :** AWS EC2 Ubuntu 24.04 — us-east-1

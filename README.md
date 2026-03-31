@@ -33,19 +33,20 @@ Maîtriser l'ensemble de la stack DevOps de A à Z à travers 100 jours de prati
 | Jour | Titre | Statut | Projet |
 |------|-------|--------|--------|
 | 01 | Pourquoi le DevOps ? | ✅ | Notes + Concepts |
-| 02 | Linux pour le DevOps — Partie I | ⏳ | - |
-| 03 | Linux pour le DevOps — Partie II | ⏳ | - |
-| 04 | Linux pour le DevOps — Partie III | ⏳ | - |
-| 05 | Bash Scripting | ⏳ | - |
-| 06 | Git & GitHub | ⏳ | - |
-| 07 | Docker Introduction | ⏳ | - |
-| 08 | Docker Avancé | ⏳ | - |
-| 09 | Docker Compose | ⏳ | - |
-| 10 | Kubernetes Introduction | ⏳ | - |
-| ... | ... | ⏳ | - |
-| 100 | Projet Final | ⏳ | - |
+| 02 | Linux pour le DevOps — Partie I | ✅ | Commandes + Script surveillance |
+| 03 | Déployer une App Statique avec Nginx | ✅ | **Site live http://44.222.105.23** |
+| 04 | Les Éditeurs de Texte Linux (Vim, Nano) | ✅ | Exercices + .vimrc |
+| 05 | Introduction au Contrôle de Version (Git) | ✅ | Repo + branches + merge sur EC2 |
+| 06 | Git Avancé : Branches, Merge, Rebase | ✅ | Workflow pro + SSH GitHub |
+| 07 | Shell Scripting Bash | ✅ | Script monitoring complet sur EC2 |
+| 08 | GitHub Course (Fork, Clone, PR) | ⏳ | - |
+| 09 | AWS Introduction | ⏳ | - |
+| 10 | CI/CD avec AWS CodeBuild | ⏳ | - |
+```
 
-> ✅ Complété | 🔄 En cours | ⏳ À faire
+Message de commit :
+```
+docs: update progression tableau - jours 02 à 07 completed
 
 ---
 

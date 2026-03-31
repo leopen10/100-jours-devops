@@ -128,6 +128,21 @@ git clone <url>                   # Cloner un repo
 Voir [`exercices.sh`](./exercices.sh) pour le projet complet :
 - Initialiser un repo Git local
 - Créer des commits avec un historique propre
+- ---
+
+## ✅ Preuve d'exécution sur AWS EC2
+
+Projet Git exécuté sur serveur Ubuntu 24.04 — AWS EC2 (us-east-1)
+
+\`\`\`
+* b3a85ed (HEAD -> main, feature/monitoring) feat: add monitoring script
+* 85aa692 feat: initial commit - projet devops jour 5
+\`\`\`
+
+- **Commits :** 2
+- **Branches :** 2 (main + feature/monitoring)
+- **Merge :** Fast-forward réussi
+- **Serveur :** ubuntu@44.222.105.23
 - Gérer des branches feature
 - Connecter au repo GitHub distant
 

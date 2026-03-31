@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Portfolio | Leonel-Magloire PENGOU MBA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #1f6feb, #388bfd);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; opacity: 0.9; }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 10px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-tag {
+            background: #1f6feb22;
+            border: 1px solid #1f6feb;
+            color: #58a6ff;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+        }
+        .progress-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #21262d;
+        }
+        .progress-item:last-child { border-bottom: none; }
+        .status-done { color: #3fb950; font-weight: bold; }
+        .status-pending { color: #8b949e; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            margin-top: 40px;
+        }
+        footer a { color: #58a6ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 DevOps Journey</h1>
+        <p>Leonel-Magloire PENGOU MBA</p>
+        <p style="margin-top:15px;">
+            <span class="badge">Cloud Engineer</span>
+            <span class="badge">AWS</span>
+            <span class="badge">Kubernetes</span>
+            <span class="badge">CI/CD</span>
+            <span class="badge">Linux</span>
+        </p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>📋 À Propos</h2>
+            <p>Étudiant en Licence Cybersécurité, Cloud et Réseaux à l'ESTIAM Paris. Passionné par l'automatisation, l'infrastructure cloud et les pratiques DevOps modernes. Ce site est déployé sur un serveur Linux Ubuntu avec Nginx — Projet Jour 3 de ma formation DevOps 100 jours.</p>
+        </div>
+
+        <div class="card">
+            <h2>🛠️ Stack Technique</h2>
+            <div class="skills">
+                <span class="skill-tag">Linux / Bash</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">AWS EC2 / S3</span>
+                <span class="skill-tag">Nginx</span>
+                <span class="skill-tag">Prometheus</span>
+                <span class="skill-tag">Grafana</span>
+                <span class="skill-tag">Python</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Formation 100 Jours DevOps</h2>
+            <div class="progress-item">
+                <span>Jour 01 — Pourquoi le DevOps ?</span>
+                <span class="status-done">✅ Complété</span>
+            </div>
+            <div class="progress-item">
+                <span>Jour 02 — Linux pour le DevOps Partie I</span>
+                <span class="status-done">✅ Complété</span>
+            </div>
+            <div class="progress-item">
+                <span>Jour 03 — Déployer une App Statique avec Nginx</span>
+                <span class="status-done">✅ Complété</span>
+            </div>
+            <div class="progress-item">
+                <span>Jour 04 — Linux Partie III</span>
+                <span class="status-pending">⏳ À venir</span>
+            </div>
+            <div class="progress-item">
+                <span>Jour 05 — Bash Scripting</span>
+                <span class="status-pending">⏳ À venir</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌐 Liens</h2>
+            <p>
+                <a href="https://github.com/leopen10">🐙 GitHub</a> &nbsp;|&nbsp;
+                <a href="https://linkedin.com/in/leonel-magloire-pengou-mba-62157b389">💼 LinkedIn</a> &nbsp;|&nbsp;
+                <a href="https://mon-portfolio-lp.netlify.app">🌐 Portfolio</a>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Déployé sur Ubuntu Server avec Nginx — Formation DevOps 100 jours</p>
+        <p style="margin-top:8px;">
+            <a href="https://github.com/leopen10/100-jours-devops">📁 Voir le repo GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

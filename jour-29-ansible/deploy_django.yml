@@ -1,0 +1,63 @@
+---
+- name: Deployer LEONEL INVOICE SYSTEM
+  hosts: webservers
+  become: true
+  vars:
+    app_dir: /home/ubuntu/django-invoice
+    venv_dir: /home/ubuntu/venv-devops
+
+  tasks:
+    - name: Verifier que Nginx est installe
+      apt:
+        name: nginx
+        state: present
+
+    - name: Mettre a jour le code Django
+      git:
+        repo: https://github.com/leopen10/django-invoice.git
+        dest: "{{ app_dir }}"
+        version: main
+        force: yes
+      become_user: ubuntu
+
+    - name: Installer les dependances Python
+      pip:
+        requirements: "{{ app_dir }}/requirements.txt"
+        virtualenv: "{{ venv_dir }}"
+      ignore_errors: yes
+
+    - name: Appliquer les migrations Django
+      command: "{{ venv_dir }}/bin/python manage.py migrate --noinput"
+      args:
+        chdir: "{{ app_dir }}"
+      become_user: ubuntu
+      environment:
+        DJANGO_SETTINGS_MODULE: django_invoice.local
+
+    - name: Redemarrer Gunicorn
+      service:
+        name: gunicorn
+        state: restarted
+
+    - name: Redemarrer Nginx
+      service:
+        name: nginx
+        state: restarted
+
+    - name: Verifier que le site repond
+      uri:
+        url: http://localhost
+        status_code: [200, 302]
+      register: result
+
+    - name: Afficher le resultat
+      debug:
+        msg: "Site accessible - HTTP {{ result.status }}"
+    - name: Installer deps sans psycopg2
+      pip:
+        name:
+          - django==6.0.3
+          - gunicorn==25.3.0
+          - python-decouple
+          - whitenoise
+        virtualenv: "{{ venv_dir }}"

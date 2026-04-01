@@ -1,0 +1,55 @@
+version: 0.2
+
+# ============================================================
+# buildspec.yml - Jour 10 AWS CodeBuild
+# Projet : Flask API DevOps - Leonel-Magloire PENGOU MBA
+# ============================================================
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "=== INSTALL - Installation des dependances ==="
+      - pip install flask pytest pip-audit
+      - pip list
+
+  pre_build:
+    commands:
+      - echo "=== PRE_BUILD - Verification environnement ==="
+      - python --version
+      - pip --version
+      - echo "Date debut : $(date)"
+      - echo "Repo : $CODEBUILD_SOURCE_REPO_URL"
+      - echo "Branch : $CODEBUILD_WEBHOOK_HEAD_REF"
+
+  build:
+    commands:
+      - echo "=== BUILD - Tests et compilation ==="
+      - echo "Lancement des tests unitaires..."
+      - pytest test_app.py -v --tb=short
+      - echo "Tests passes !"
+      - echo "Audit securite des dependances..."
+      - pip-audit || echo "Audit termine"
+
+  post_build:
+    commands:
+      - echo "=== POST_BUILD - Packaging de l'artefact ==="
+      - echo "Build status : $CODEBUILD_BUILD_SUCCEEDING"
+      - zip -r flaskapp-devops.zip app.py test_app.py requirements.txt
+      - echo "Artefact cree : flaskapp-devops.zip"
+      - ls -lh flaskapp-devops.zip
+      - echo "Date fin : $(date)"
+      - echo "=== BUILD TERMINE AVEC SUCCES ==="
+
+artifacts:
+  files:
+    - flaskapp-devops.zip
+    - app.py
+    - requirements.txt
+  discard-paths: yes
+  name: flaskapp-$(date +%Y-%m-%d)
+
+cache:
+  paths:
+    - '/root/.cache/pip/**/*'

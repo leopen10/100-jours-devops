@@ -1,0 +1,46 @@
+name: Jour 12 - CI/CD Pipeline (equivalent CodeBuild)
+
+on:
+  push:
+    paths:
+      - 'jour-12-projet-codebuild-github/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone le repo (equivalent CodeCommit)
+        uses: actions/checkout@v4
+
+      - name: Configurer Python (install phase)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Pre-build
+        run: |
+          echo "Pre-build - $(date)"
+          python --version
+          pip --version
+
+      - name: Build - Installer dependances
+        run: |
+          cd jour-12-projet-codebuild-github
+          pip install -r requirements.txt
+          python -c "import flask; print('Flask OK !')"
+          echo "Build reussi !"
+
+      - name: Post-build - Packaging artefact
+        run: |
+          cd jour-12-projet-codebuild-github
+          zip -r artefact-leonel.zip app.py requirements.txt
+          echo "Artefact cree !"
+          ls -lh artefact-leonel.zip
+
+      - name: Upload artefact (equivalent S3)
+        uses: actions/upload-artifact@v4
+        with:
+          name: artefact-leonel-jour12
+          path: jour-12-projet-codebuild-github/artefact-leonel.zip
+          retention-days: 7

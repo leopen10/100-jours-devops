@@ -122,19 +122,23 @@ Voir [`exercices.sh`](./exercices.sh)
 
 ---
 
+
 ## ✅ Preuve d'exécution sur AWS EC2
 
-Voir résultats réels dans le terminal — repo `~/projet-devops-git` :
+**Serveur :** Ubuntu 24.04 — AWS EC2 t3.micro — us-east-1  
+**Date :** 1 avril 2026
 ```
-* ca24ffc (HEAD -> main) chore: add changelog v1.0
+* c8ec362 (HEAD -> develop, tag: v1.0.0, main) chore: prepare release v1.0.0
+* a45e886 feat: add health monitoring
+* 210b026 feat: add API status endpoint
+* ca24ffc chore: add changelog v1.0
 | * fec690f (release/v1.0) chore: add changelog v1.0
 |/
-* b3a85ed (feature/monitoring) feat: add monitoring script
+* b3a85ed feat: add monitoring script
 * 85aa692 feat: initial commit
 
-Commits  : 3 | Branches : 3 | Cherry-pick : ✅
+Tags : v1.0.0 ✅
 ```
-
 ---
 
 ## ➡️ Prochain Jour

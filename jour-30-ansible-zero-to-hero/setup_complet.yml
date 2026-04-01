@@ -1,0 +1,41 @@
+---
+- name: Jour 30 - Ansible Zero to Hero
+  hosts: local
+  become: true
+  vars:
+    packages:
+      - nginx
+      - git
+      - curl
+    app_dir: /home/ubuntu/django-invoice
+
+  tasks:
+    - name: Verifier paquets installes
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages }}"
+
+    - name: Verifier services
+      service:
+        name: "{{ item }}"
+        state: started
+      loop: [nginx, gunicorn]
+
+    - name: Collecter infos systeme
+      shell: "{{ item.cmd }}"
+      register: sys_info
+      loop:
+        - { name: disk, cmd: "df -h / | tail -1" }
+        - { name: ram, cmd: "free -h | grep Mem" }
+        - { name: cpu, cmd: "nproc" }
+
+    - name: Rapport final
+      debug:
+        msg:
+          - "=== RAPPORT JOUR 30 ANSIBLE ==="
+          - "Host : {{ ansible_hostname }}"
+          - "OS   : {{ ansible_distribution }} {{ ansible_distribution_version }}"
+          - "IP   : {{ ansible_default_ipv4.address }}"
+          - "CPUs : {{ ansible_processor_vcpus }}"
+          - "Site : http://{{ ansible_default_ipv4.address }}"

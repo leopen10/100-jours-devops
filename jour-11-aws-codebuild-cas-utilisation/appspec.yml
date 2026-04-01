@@ -1,0 +1,40 @@
+version: 0.0
+os: linux
+
+# ============================================================
+# appspec.yml - Jour 11 AWS CodeDeploy
+# Projet : Flask API DevOps - Leonel-Magloire PENGOU MBA
+# ============================================================
+
+files:
+  - source: /
+    destination: /home/ubuntu/flaskapp-devops/
+
+permissions:
+  - object: /home/ubuntu/flaskapp-devops/
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+    type:
+      - directory
+
+hooks:
+  BeforeInstall:
+    - location: scripts/stop_server.sh
+      timeout: 300
+      runas: ubuntu
+
+  AfterInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: ubuntu
+
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 300
+      runas: ubuntu
+
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
+      runas: ubuntu

@@ -191,6 +191,19 @@ echo "Service validé !"
 ✅ appspec.yml créé (Jour 11)
 ✅ Site déployé sur EC2 via script deploy.sh (Jour 09)
 ✅ Pipeline GitHub Actions (ancien Jour 08) → équivalent CodeBuild
+
+## ✅ Preuve d'exécution — GitHub Actions (équivalent CodeBuild)
+
+**Date :** 1 avril 2026 | **Durée :** 20 secondes | **Status :** ✅ SUCCESS
+
+Pipeline CI/CD complet :
+- Clone repo ✅
+- Python 3.11 configuré ✅
+- Flask installé ✅
+- Build réussi ✅
+- Artefact créé : artefact-leonel.zip (522 Bytes) ✅
+
+**Run :** https://github.com/leopen10/100-jours-devops/actions/runs/23831432349
 ```
 
 ---

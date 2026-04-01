@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - pip install -r requirements.txt
+  pre_build:
+    commands:
+      - echo "Pre-build - $(date)"
+      - python --version
+  build:
+    commands:
+      - python -c "import flask; print('Flask OK')"
+      - echo "Build reussi !"
+  post_build:
+    commands:
+      - zip -r artefact-leonel.zip app.py requirements.txt
+      - echo "Artefact cree !"
+
+artifacts:
+  files:
+    - artefact-leonel.zip
+  discard-paths: yes

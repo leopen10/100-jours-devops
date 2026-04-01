@@ -1,0 +1,37 @@
+name: Jour 13 - Deploy Site Statique vers S3
+
+on:
+  push:
+    paths:
+      - 'jour-13-deploiement-statique-s3/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Pre-build verification
+        run: |
+          echo "Debut deploiement - $(date)"
+          ls jour-13-deploiement-statique-s3/
+          test -f jour-13-deploiement-statique-s3/index.html && echo "index.html OK !"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy vers S3
+        run: |
+          aws s3 cp jour-13-deploiement-statique-s3/index.html s3://devops-artefacts-leonel-2026/site/index.html
+          echo "Site deploye sur S3 !"
+
+      - name: Afficher URL du site
+        run: |
+          echo "Site accessible sur :"
+          echo "https://devops-artefacts-leonel-2026.s3.amazonaws.com/site/index.html"

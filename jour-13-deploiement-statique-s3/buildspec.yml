@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Debut deploiement - $(date)"
+      - echo "Branch : $CODEBUILD_WEBHOOK_HEAD_REF"
+
+  build:
+    commands:
+      - echo "Validation du site statique..."
+      - test -f index.html && echo "index.html OK !"
+
+  post_build:
+    commands:
+      - echo "Deploiement vers S3..."
+      - aws s3 cp index.html s3://devops-artefacts-leonel-2026/site/
+      - echo "Site deploye !"
+
+artifacts:
+  files:
+    - index.html
+  discard-paths: yes

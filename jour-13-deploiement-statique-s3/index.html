@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>100 Jours DevOps - Leonel PENGOU</title>
+  <style>
+    body { background:#0d1117; color:#e6edf3; font-family:Arial; text-align:center; padding:50px; margin:0; }
+    h1 { color:#58a6ff; font-size:2.5em; }
+    .card { background:#161b22; padding:20px; border-radius:10px; margin:20px auto; max-width:700px; border:1px solid #30363d; }
+    .badge { background:#238636; padding:8px 15px; border-radius:5px; margin:5px; display:inline-block; font-size:0.9em; }
+    .pipeline { display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; margin:20px 0; }
+    .step { background:#1f6feb; padding:10px 15px; border-radius:5px; }
+    .arrow { color:#58a6ff; font-size:1.5em; }
+  </style>
+</head>
+<body>
+  <h1>🚀 100 Jours DevOps</h1>
+  <h2>Leonel-Magloire PENGOU MBA</h2>
+
+  <div class="card">
+    <h3>📦 Jour 13 — Déploiement Automatique Site Statique</h3>
+    <div class="pipeline">
+      <div class="step">GitHub Push</div>
+      <span class="arrow">→</span>
+      <div class="step">GitHub Actions</div>
+      <span class="arrow">→</span>
+      <div class="step">Build</div>
+      <span class="arrow">→</span>
+      <div class="step">S3 Deploy</div>
+    </div>
+    <p>Chaque push sur GitHub déclenche automatiquement le déploiement !</p>
+  </div>
+
+  <div class="card">
+    <h3>✅ Stack Maîtrisée</h3>
+    <div class="badge">Linux</div>
+    <div class="badge">Git</div>
+    <div class="badge">GitHub Actions</div>
+    <div class="badge">AWS EC2</div>
+    <div class="badge">AWS S3</div>
+    <div class="badge">Nginx</div>
+    <div class="badge">Docker</div>
+    <div class="badge">Flask</div>
+  </div>
+
+  <div class="card">
+    <p>🌐 Site live : <a href="http://44.222.105.23" style="color:#58a6ff">http://44.222.105.23</a></p>
+    <p>📅 Déployé automatiquement le : <span id="date"></span></p>
+    <script>document.getElementById('date').innerText = new Date().toLocaleDateString('fr-FR');</script>
+  </div>
+</body>
+</html>

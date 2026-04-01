@@ -198,3 +198,4 @@ echo "Service validé !"
 ## ➡️ Prochain Jour
 
 [Jour 13 — Déploiement Automatique d'un Site Statique avec CodeBuild et S3](../jour-13-deploiement-statique-codebuild-s3/)
+# Jour 12 - Projet CodeBuild GitHub Actions

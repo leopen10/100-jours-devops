@@ -125,26 +125,14 @@ git merge --abort                              # Annuler merge
 ---
 
 ## ✅ Preuve d'exécution sur AWS EC2
-
+**Date :** 1 avril 2026 | **Serveur :** Ubuntu 24.04 — us-east-1
+```
+✅ SSH GitHub  : Hi leopen10! You've successfully authenticated
+✅ Remote SSH  : git@github.com:leopen10/100-jours-devops.git
+✅ Conflit résolu : CHANGELOG.md
+✅ Rebase effectué sur main
+✅ Clone local simulé
+✅ Historique propre : 7 commits, 1 branche, tag v1.0.0
+```
 **Date :** 1 avril 2026 | **Serveur :** Ubuntu 24.04 — us-east-1
 
-```
-✅ Clone SSH    : git@github.com:leopen10/100-jours-devops.git
-✅ Remote SSH   : git remote set-url origin git@github.com:...
-✅ Push réussi  : git push origin main → 9ac57e4
-✅ Conflit résolu : CHANGELOG.md → git add + git commit
-✅ Suppression dossiers : git rm -rf jour-07/ jour-08/ jour-09/
-✅ Historique   :
-   * 9ac57e4 (HEAD -> main) chore: remove jour 07-08-09
-   * c8ec362 (tag: v1.0.0) chore: prepare release v1.0.0
-   * a45e886 feat: add health monitoring
-   | * fec690f (release/v1.0) chore: add changelog v1.0
-   |/
-   * b3a85ed feat: add monitoring script
-```
-
----
-
-## ➡️ Prochain Jour
-
-[Jour 09 — Déploiement sur AWS avec Git, GitHub, IAM et EC2](../jour-09-aws-git-iam-ec2/)

@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Stack Leonel DevOps - Jour 41 CloudFormation
+Resources:
+  DevOpsSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: SG Jour 41 CloudFormation
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: leonel-cloudformation-sg
+Outputs:
+  SGID:
+    Description: Security Group ID cree par CloudFormation
+    Value: !Ref DevOpsSG

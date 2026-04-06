@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: leonel-app
+  name: leonel-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: leonel-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: leonel-app
+    spec:
+      containers:
+      - image: leonel-devops-ecr:v1
+        name: leonel-devops-ecr
+        resources: {}
+status: {}

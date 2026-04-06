@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: leonel-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: leonel
+  template:
+    metadata:
+      labels:
+        app: leonel
+    spec:
+      containers:
+      - name: flask-app
+        image: leonel-devops-ecr:v1
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

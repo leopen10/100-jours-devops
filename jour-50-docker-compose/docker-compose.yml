@@ -1,0 +1,20 @@
+services:
+  web1:
+    build: .
+    container_name: leonel-web1
+    ports:
+      - "5001:5000"
+    networks:
+      - leonel-net
+
+  web2:
+    build: .
+    container_name: leonel-web2
+    ports:
+      - "5002:5000"
+    networks:
+      - leonel-net
+
+networks:
+  leonel-net:
+    driver: bridge
